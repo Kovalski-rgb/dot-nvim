@@ -1,7 +1,18 @@
 return {
 	"neovim/nvim-lspconfig",
 
+	dependencies = {
+		"williamboman/mason.nvim",
+	},
+
 	config = function()
-		require'lspconfig'.pyright.setup{}
+		-- local instances
+		local lspconfig	= require("lspconfig")
+	 	local mason = require("mason")
+
+		-- setups
+		mason.setup()
+		lspconfig.pyright.setup({})
+
 	end
 }
