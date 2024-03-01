@@ -16,6 +16,7 @@ return{
 
 	config = function()
 		local cmp = require('cmp')
+		local cmp_select = { behavior = cmp.SelectBehavior.Select }
 		cmp.setup({
 
 		    -- snippet engine
@@ -37,7 +38,10 @@ return{
 				['<C-j>'] = cmp.mapping.scroll_docs(4),
 
 				['<C-Space>'] = cmp.mapping.complete(),
-				['<C-e>'] = cmp.mapping.abort(),
+				['<Esc>'] = cmp.mapping.abort(),
+
+				['<M-k>'] = cmp.mapping.select_prev_item(cmp_select),
+				['<M-j>'] = cmp.mapping.select_next_item(cmp_select),
 				['<CR>'] = cmp.mapping.confirm({ select = true }),
 			}),
 
