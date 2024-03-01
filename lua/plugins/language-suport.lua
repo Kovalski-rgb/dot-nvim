@@ -40,6 +40,6 @@ return {
 				}
 			}
 		})
-	end
+	end,
 }
 
