@@ -1,0 +1,4 @@
+{
+  "bamboo.nvim": { "branch": "master", "commit": "2c5a7442f8db3dcc3f5175f0bed73675e26e3931" },
+  "nvim-lspconfig": { "branch": "master", "commit": "9553725789be682ecd945a527ec552e489ea8534" }
+}
