@@ -14,18 +14,13 @@ return {
 
 		-- setups
 		mason.setup()
-		mason_lsp.setup({
-			ensure_installed = {
-				'lua_la',
-				'pyright',
-			}})
-		-- auto setup on 'ensure_installed' lsp's
+		mason_lsp.setup({})
+		-- auto setup installed LSPs provided by Mason
 		mason_lsp.setup_handlers({
 			function(server)
 				lspconfig[server].setup({})
 			end,
 		})
-		lspconfig.pyright.setup({})
 
 	end
 }
