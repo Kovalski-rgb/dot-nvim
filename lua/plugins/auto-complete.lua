@@ -11,6 +11,10 @@ return{
 		-- chosen required snippet engines
 		"L3MON4D3/LuaSnip",
 		"saadparwaiz1/cmp_luasnip",
+
+		-- Vscode snippets
+		"hrsh7th/cmp-vsnip",
+		"hrsh7th/vim-vsnip",
 	},
 
 
@@ -38,7 +42,7 @@ return{
 				['<C-j>'] = cmp.mapping.scroll_docs(4),
 
 				['<C-Space>'] = cmp.mapping.complete(),
-				['<Esc>'] = cmp.mapping.abort(),
+				['<Esc><Esc>'] = cmp.mapping.abort(),
 
 				['<M-k>'] = cmp.mapping.select_prev_item(cmp_select),
 				['<M-j>'] = cmp.mapping.select_next_item(cmp_select),
@@ -66,6 +70,7 @@ return{
 					capabilities = capabilities
 				})
 			end,
+
 		})
 
 	end,
