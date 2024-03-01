@@ -14,7 +14,13 @@ return {
 
 		-- setups
 		mason.setup()
-		mason_lsp.setup({})
+		mason_lsp.setup({
+			ensure_installed = {
+				'lua_ls',
+				'ast_grep',
+				'angularls'
+			}
+		})
 		-- auto setup installed LSPs provided by Mason
 		mason_lsp.setup_handlers({
 			function(server)
