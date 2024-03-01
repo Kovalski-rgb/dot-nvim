@@ -8,7 +8,7 @@ return{
 		"hrsh7th/cmp-path",
 		"hrsh7th/cmp-cmdline",
 
-		-- required snippet engines
+		-- chosen required snippet engines
 		"L3MON4D3/LuaSnip",
 		"saadparwaiz1/cmp_luasnip",
 	},
@@ -55,6 +55,7 @@ return{
 		local lspconfig	= require("lspconfig")
 	 	local mason_lsp = require("mason-lspconfig")
 
+		-- half lsp config/cmp config - auto sets up mason installed LSPs, and sets then with cmp
 		mason_lsp.setup_handlers({
 			function(server)
 				lspconfig[server].setup({

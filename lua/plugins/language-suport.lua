@@ -22,11 +22,12 @@ return {
 			}
 		})
 		-- auto setup installed LSPs provided by Mason
-		mason_lsp.setup_handlers({
-			function(server)
-				lspconfig[server].setup({})
-			end,
-		})
+		-- function is running on ./auto-completion.lua
+		-- mason_lsp.setup_handlers({
+		-- 	function(server)
+		-- 		lspconfig[server].setup({})
+		-- 	end,
+		-- })
 
 	end
 }
