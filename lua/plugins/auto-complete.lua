@@ -55,11 +55,32 @@ return{
 				{ name = 'luasnip' },
 			} , {
 				{ name = 'buffer' },
-			})
+			}),
+
+        	vim.diagnostic.config({
+          	  virtual_text = true,
+          	  update_in_insert = true,
+          	  float = {
+          	      focusable = false,
+          	      style = "minimal",
+          	      border = 'rounded',
+          	      header = '',
+          	      prefix = '',
+          	  }
+        	})
 		})
 
 		-- setting up lsps
-		local capabilities = require('cmp_nvim_lsp').default_capabilities()
+		--
+		local has_lsp, cmp_lsp = pcall(require, 'cmp_nvim_lsp')
+        local capabilities = vim.tbl_deep_extend(
+            'force',
+            {},
+            vim.lsp.protocol.make_client_capabilities(),
+            cmp_lsp.default_capabilities()
+        )
+
+		-- local capabilities = require('cmp_nvim_lsp').default_capabilities()
 		local lspconfig	= require("lspconfig")
 	 	local mason_lsp = require("mason-lspconfig")
 
