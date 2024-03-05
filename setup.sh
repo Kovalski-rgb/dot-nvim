@@ -1,7 +1,7 @@
 #!/usr/bin/bash
 
-mkdir -p ~/.config/
-mkdir -p ~/.config/nvim/
+rm -rfi ~/.config/nvim/
+mkdir -p ~/.config/ ~/.config/nvim/
 
 shopt -s dotglob nullglob
 
