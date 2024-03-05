@@ -1,6 +1,10 @@
 vim.g.mapleader = " "
 
+-- essa é literal a binf q eu mais uso vlw enzo
 vim.keymap.set('n', '<leader>qq', vim.cmd.Ex)
+
+vim.keymap.set('v', "K", ":m '<-2<CR>gv==gv") -- Move a linha inteira
+vim.keymap.set('v', "J", ":m '>+1<CR>gv==gv")
 
 vim.keymap.set('n', '<leader>y', '"+y')
 vim.keymap.set('n', '<leader>Y', '"+yg_')

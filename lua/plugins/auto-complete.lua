@@ -15,10 +15,15 @@ return{
 		-- Vscode snippets
 		"hrsh7th/cmp-vsnip",
 		"hrsh7th/vim-vsnip",
+
+		"rafamadriz/friendly-snippets",
 	},
 
 
 	config = function()
+
+        require 'luasnip.loaders.from_vscode'.lazy_load()
+
 		local cmp = require('cmp')
 		local cmp_select = { behavior = cmp.SelectBehavior.Select }
 		cmp.setup({
