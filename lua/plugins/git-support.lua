@@ -10,10 +10,8 @@ return {
 	config  = function ()
 
 		local git = require('gitsigns')
-
 		git.setup({
-
-			current_line_blame_formatter = '\t<author>, <author_time:%d-%m-%Y> | <summary>',
+			current_line_blame_formatter = '\t<author> - |<author_time:%d/%m/%Y|%H:%M>| ¬<summary>',
 			current_line_blame_opts = {
 		   		delay = 400,
 			},
