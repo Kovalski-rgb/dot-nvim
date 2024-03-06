@@ -9,8 +9,8 @@ vim.opt.shell='/usr/bin/zsh'
 vim.opt.clipboard='unnamedplus'
 vim.opt.scrolloff=5
 
-vim.opt.tabstop=4
-vim.opt.shiftwidth=4
+vim.opt.tabstop=2
+vim.opt.shiftwidth=2
 -- for wsl only
 -- vim.cmd [[
 -- let g:clipboard = {
