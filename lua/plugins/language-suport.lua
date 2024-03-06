@@ -17,8 +17,8 @@ return {
 		mason_lsp.setup({
 			ensure_installed = {
 				'lua_ls',
-				'ast_grep',
-				'angularls'
+				'bashls',
+				'rust_analyzer',
 			}
 		})
 		-- auto setup installed LSPs provided by Mason
@@ -31,15 +31,6 @@ return {
 
 		-- setup 'vim' as global to stop warning spam on sets and maps
 		-- setup 'vim' as a global for lua lsp	
-		lspconfig.lua_ls.setup({
-			settings = {
-				Lua = {
-					diagnostics = {
-						globals = { 'vim' }
-					}
-				}
-			}
-		})
 
 	end,
 }

@@ -21,7 +21,7 @@ return{
 
 
 	config = function()
-
+		-- setup for friendly snippets
         require 'luasnip.loaders.from_vscode'.lazy_load()
 
 		local cmp = require('cmp')
@@ -90,14 +90,25 @@ return{
 	 	local mason_lsp = require("mason-lspconfig")
 
 		-- half lsp config/cmp config - auto sets up mason installed LSPs, and sets then with cmp
-		mason_lsp.setup_handlers({
+		mason_lsp.setup({ handlers = {
 			function(server)
 				lspconfig[server].setup({
 					capabilities = capabilities
 				})
 			end,
 
-		})
-
+			-- exclusive config for lua files to declare a global var 'vim'
+			['lua_ls'] = function()
+				lspconfig.lua_ls.setup({
+				settings = {
+					Lua = {
+						diagnostics = {
+							globals = { 'vim' }
+						}
+					}
+				}
+			})
+			end
+		}})
 	end,
 }

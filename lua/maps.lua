@@ -1,6 +1,6 @@
 vim.g.mapleader = " "
 
--- essa é literal a binf q eu mais uso vlw enzo
+-- essa é literal a bind q eu mais uso vlw enzo
 vim.keymap.set('n', '<leader>qq', vim.cmd.Ex)
 
 vim.keymap.set('v', "K", ":m '<-2<CR>gv==gv") -- Move a linha inteira
