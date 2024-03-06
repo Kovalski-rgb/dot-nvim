@@ -1,7 +1,6 @@
 vim.opt.number = true
 vim.opt.relativenumber = true
 vim.opt.termguicolors = true
---vim.opt.t_Co=256
 vim.opt.encoding='UTF-8'
 
 vim.opt.swapfile=false
@@ -28,14 +27,5 @@ vim.opt.shiftwidth=4
 -- \}
 -- ]]
 
-
-
-
--- syntax on
---
---if !exists('g:syntax_on') | syntax enable | endif
---command V let @/=""
---command T terminal
---
 --autocmd InsertEnter * :set norelativenumber
 --autocmd InsertLeave * :set relativenumber

@@ -20,10 +20,18 @@ return {
 		mason_lsp.setup({
 			ensure_installed = {
 				'lua_ls',
-				'ast_grep',
-				'angularls'
+				'bashls',
+				'rust_analyzer',
 			}
 		})
+
+		-- auto setup installed LSPs provided by Mason
+		-- function is running on ./auto-completion.lua
+		-- mason_lsp.setup_handlers({
+		-- 	function(server)
+		-- 		lspconfig[server].setup({})
+		-- 	end,
+		-- })
 
 	end,
 }

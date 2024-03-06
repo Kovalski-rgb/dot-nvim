@@ -15,10 +15,15 @@ return{
 		-- Vscode snippets
 		"hrsh7th/cmp-vsnip",
 		"hrsh7th/vim-vsnip",
+
+		"rafamadriz/friendly-snippets",
 	},
 
 
 	config = function()
+		-- setup for friendly snippets
+        require 'luasnip.loaders.from_vscode'.lazy_load()
+
 		local cmp = require('cmp')
 		local cmp_select = { behavior = cmp.SelectBehavior.Select }
 		cmp.setup({
@@ -51,6 +56,7 @@ return{
 
 			-- fonte para popular os snippets
 			sources = cmp.config.sources({
+				{ name = 'path' },
 				{ name = 'nvim_lsp' },
 				{ name = 'luasnip' },
 			} , {
@@ -85,14 +91,25 @@ return{
 	 	local mason_lsp = require("mason-lspconfig")
 
 		-- half lsp config/cmp config - auto sets up mason installed LSPs, and sets then with cmp
-		mason_lsp.setup_handlers({
+		mason_lsp.setup({ handlers = {
 			function(server)
 				lspconfig[server].setup({
 					capabilities = capabilities
 				})
 			end,
 
-		})
-
+			-- exclusive config for lua files to declare a global var 'vim'
+			['lua_ls'] = function()
+				lspconfig.lua_ls.setup({
+				settings = {
+					Lua = {
+						diagnostics = {
+							globals = { 'vim' }
+						}
+					}
+				}
+			})
+			end
+		}})
 	end,
 }
