@@ -56,6 +56,7 @@ return{
 
 			-- fonte para popular os snippets
 			sources = cmp.config.sources({
+				{ name = 'path' },
 				{ name = 'nvim_lsp' },
 				{ name = 'luasnip' },
 			} , {
