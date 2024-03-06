@@ -14,8 +14,8 @@ return {
 				local is_angular = next(vim.fs.find({ "angular.json"}, { upward = true }))
 
 				if is_angular then
-					-- goto style files
-					vim.keymap.set("n", "<leader>gts", find('.+css|.+scss|.+sass', { regex = true, prefix = 'full' }), opts)
+					-- goto CSS/style files
+					vim.keymap.set("n", "<leader>gtc", find('.+css|.+scss|.+sass', { regex = true, prefix = 'full' }), opts)
 
 					-- goto test files
 					vim.keymap.set("n", "<leader>gtt", find('.+spec', { regex = true, prefix = 'full' }), opts)
@@ -23,7 +23,7 @@ return {
 					vim.keymap.set("n", "<leader>gth", find('.component.html'), opts)	-- goto html
 					vim.keymap.set("n", "<leader>gts", find('.component.ts'), opts)	-- goto script
 					vim.keymap.set("n", "<leader>gtm", find('.module.ts'), opts)	-- goto module
-					vim.keymap.set("n", "<leader>gts", find('.service.ts'), opts)	-- goto service
+					vim.keymap.set("n", "<leader>gtv", find('.service.ts'), opts)	-- goto serVice
 				end
 
 			end
